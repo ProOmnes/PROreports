@@ -1,2 +1,6 @@
 settings:
   provider: Yaml
+
+mongodb:
+  uri: "mongodb://<user>:<password>@<ipAddress>:27017/"
+  database: "reports"

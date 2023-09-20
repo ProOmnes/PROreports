@@ -2,43 +2,46 @@ package net.proomnes.proreports;
 
 import cn.nukkit.plugin.PluginBase;
 import lombok.Getter;
-import net.proomnes.proreports.provider.MongoDBProvider;
-import net.proomnes.proreports.provider.MySQLProvider;
-import net.proomnes.proreports.provider.Provider;
-import net.proomnes.proreports.provider.YamlProvider;
-
-import java.util.HashMap;
-import java.util.Map;
+import net.proomnes.proreports.dataaccess.IDataAccess;
+import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
+import net.proomnes.proreports.dataaccess.MySQLDataAccess;
+import net.proomnes.proreports.dataaccess.YamlDataAccess;
 
 public class PROreports extends PluginBase {
 
-    private final Map<String, Provider> providers = new HashMap<>();
-
     @Getter
-    private Provider provider;
+    private IDataAccess dataAccess;
 
     @Override
     public void onLoad() {
         this.getLogger().info("[PROreports] Loading plugin...");
-        this.providers.put("MongoDB", new MongoDBProvider());
-        this.providers.put("MySQL", new MySQLProvider());
-        this.providers.put("Yaml", new YamlProvider());
     }
 
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
 
-        // connect the provider
-        if (!this.providers.containsKey(this.getConfig().getString("settings.provider"))) {
-            this.getLogger().error("§4[PROreports] Please specify a valid provider: 'Yaml', 'MySQL', 'MongoDB'.");
-            return;
+        // Initializes the provider and connects it
+        this.setUpProvider();
+
+        this.loadPlugin();
+    }
+
+    private void setUpProvider() {
+        switch (this.getConfig().getString("settings.provider")) {
+            case "Yaml":
+                this.dataAccess = new YamlDataAccess(this);
+                break;
+            case "MongoDB":
+                this.dataAccess = new MongoDBDataAccess(this);
+                break;
+            case "MySQL":
+                this.dataAccess = new MySQLDataAccess(this);
+                break;
+            default:
+                this.getLogger().error("§4[PROreports] Please specify a valid provider: 'Yaml', 'MySQL', 'MongoDB'.");
+                break;
         }
-        this.provider = this.providers.get(this.getConfig().getString("settings.provider"));
-        this.provider.connectProvider(this);
-        this.getLogger().info("§a[PROreports] Successfully loaded provider: " + this.getConfig().getString("settings.provider"));
-
-
     }
 
     private void loadPlugin() {

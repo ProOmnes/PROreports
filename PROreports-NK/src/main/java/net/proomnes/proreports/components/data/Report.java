@@ -5,7 +5,6 @@ import lombok.Data;
 
 /**
  * @implNote Report class
- * @since 1.0.0
  */
 @AllArgsConstructor
 @Data
@@ -34,7 +33,6 @@ public class Report {
      * <li>BY_TARGET</li>
      * <li>BY_MODERATOR</li>
      * @see Report
-     * @since 1.0.0
      */
     public enum SearchType {
         BY_CREATOR, BY_TARGET, BY_MODERATOR
