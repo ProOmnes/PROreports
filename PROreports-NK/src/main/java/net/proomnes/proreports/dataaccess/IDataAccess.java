@@ -67,9 +67,10 @@ public interface IDataAccess {
     /**
      * Gets a report by the unique id
      *
-     * @param id The unique id of a report
+     * @param id     The unique id of a report
+     * @param report Returns the report
      */
-    void getReport(final String id);
+    void getReport(final String id, final Consumer<Report> report);
 
     /**
      * Gets a set of reports by a provided status and search type

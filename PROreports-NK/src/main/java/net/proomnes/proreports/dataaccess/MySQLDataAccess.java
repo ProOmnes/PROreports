@@ -93,10 +93,11 @@ public class MySQLDataAccess implements IDataAccess {
     /**
      * Gets a report by the unique id
      *
-     * @param id The unique id of a report
+     * @param id     The unique id of a report
+     * @param report Returns the report
      */
     @Override
-    public void getReport(String id) {
+    public void getReport(String id, Consumer<Report> report) {
 
     }
 

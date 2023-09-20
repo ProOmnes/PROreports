@@ -8,12 +8,11 @@ import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
 import net.proomnes.proreports.dataaccess.YamlDataAccess;
 
+@Getter
 public class PROreports extends PluginBase {
 
-    @Getter
     private IDataAccess dataAccess;
 
-    @Getter
     private PluginUtils pluginUtils;
 
     @Override

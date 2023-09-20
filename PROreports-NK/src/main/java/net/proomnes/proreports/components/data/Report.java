@@ -24,7 +24,20 @@ public class Report {
      * @since 1.0.0
      */
     public enum Status {
-        PENDING, IN_PROGRESS, ON_HOLD, CLOSED
+        PENDING("Pending"),
+        IN_PROGRESS("In Progress"),
+        ON_HOLD("On Hold"),
+        CLOSED("Closed");
+
+        private final String name;
+
+        Status(final String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 
     /**
