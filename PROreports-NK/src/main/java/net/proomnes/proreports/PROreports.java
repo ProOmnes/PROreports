@@ -2,6 +2,7 @@ package net.proomnes.proreports;
 
 import cn.nukkit.plugin.PluginBase;
 import lombok.Getter;
+import net.proomnes.proreports.components.utils.PluginUtils;
 import net.proomnes.proreports.dataaccess.IDataAccess;
 import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
@@ -11,6 +12,9 @@ public class PROreports extends PluginBase {
 
     @Getter
     private IDataAccess dataAccess;
+
+    @Getter
+    private PluginUtils pluginUtils;
 
     @Override
     public void onLoad() {
@@ -45,7 +49,7 @@ public class PROreports extends PluginBase {
     }
 
     private void loadPlugin() {
-
+        this.pluginUtils = new PluginUtils();
     }
 
     @Override
