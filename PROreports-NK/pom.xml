@@ -41,6 +41,11 @@
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.proomnes.formapi</groupId>
+            <artifactId>FormAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -53,20 +58,25 @@
             <name>Opencollab Repository</name>
             <url>https://repo.opencollab.dev/maven-snapshots</url>
         </repository>
+        <repository>
+            <id>proomnes-repository-snapshots</id>
+            <name>Pro Omnes Repository</name>
+            <url>https://repo.proomnes.net/snapshots</url>
+        </repository>
     </repositories>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.11.0</version>
                 <configuration>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
