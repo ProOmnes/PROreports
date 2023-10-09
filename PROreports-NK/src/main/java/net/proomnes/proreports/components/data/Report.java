@@ -2,6 +2,7 @@ package net.proomnes.proreports.components.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 /**
  * @implNote Report class
@@ -23,6 +24,7 @@ public class Report {
      * @see Report
      * @since 1.0.0
      */
+    @Getter
     public enum Status {
         PENDING("Pending"),
         IN_PROGRESS("In Progress"),
@@ -35,9 +37,6 @@ public class Report {
             this.name = name;
         }
 
-        public String getName() {
-            return name;
-        }
     }
 
     /**
