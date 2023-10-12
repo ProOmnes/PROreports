@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 
-/**
- * @implNote Report class
- */
 @AllArgsConstructor
 @Data
 public class Report {
@@ -22,7 +19,6 @@ public class Report {
     /**
      * Status that a report can assume
      * @see Report
-     * @since 1.0.0
      */
     @Getter
     public enum Status {

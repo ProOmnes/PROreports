@@ -4,3 +4,10 @@ settings:
 mongodb:
   uri: "mongodb://<user>:<password>@<ipAddress>:27017/"
   database: "reports"
+
+mysql:
+  host: "127.0.0.1"
+  port: "3306"
+  user: "root"
+  database: "reports"
+  password: "strongpassword"
