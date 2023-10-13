@@ -1,13 +1,21 @@
+# In this section you can handle some settings to customize your plugin.
 settings:
+  # The standard provider is 'Yaml'. All data will be saved locally in a file.
+  # We recommend to save the data with a database like 'MySQL' or 'MongoDB'.
   provider: Yaml
 
+# If you set the provider to 'MongoDB', please specify the connection uri and the database.
 mongodb:
   uri: "mongodb://<user>:<password>@<ipAddress>:27017/"
   database: "reports"
 
+# If you set the provider to 'MySQL', please specify the needed data to connect to your MySQL database.
 mysql:
   host: "127.0.0.1"
   port: "3306"
   user: "root"
   database: "reports"
   password: "strongpassword"
+
+# This plugin stores the credentials for the database only in this file. The plugin uses this data only to
+# connect to the databases. This data is not shared or stored for other applications.
