@@ -46,8 +46,9 @@ public class MongoDBDataAccess implements IDataAccess {
     @Override
     public void createReport(String creator, String target, String reason, Consumer<String> id) {
         CompletableFuture.runAsync(() -> {
+            final String generatedId = this.proReports.getRandomId(7);
             final Document document = new Document(
-                    "_id", this.proReports.getPluginUtils().getRandomId(7)
+                    "_id", generatedId
             ).append(
                     "creator", creator
             ).append(
@@ -59,10 +60,12 @@ public class MongoDBDataAccess implements IDataAccess {
             ).append(
                     "moderator", "Unknown"
             ).append(
-                    "date", this.proReports.getPluginUtils().getDateWithTime()
+                    "date", this.proReports.getDateWithTime()
             );
 
             this.reportCollection.insertOne(document);
+
+            id.accept(generatedId);
         });
     }
 

@@ -51,9 +51,10 @@ public class MySQLDataAccess implements IDataAccess {
     @Override
     public void createReport(String creator, String target, String reason, Consumer<String> id) {
         CompletableFuture.runAsync(() -> {
+            final String generatedId = this.proReports.getRandomId(7);
             this.client.insert("reports",
                     new Document(
-                            "id", this.proReports.getPluginUtils().getRandomId(7)
+                            "id", generatedId
                     ).append(
                             "creator", creator
                     ).append(
@@ -68,6 +69,8 @@ public class MySQLDataAccess implements IDataAccess {
                             "date", this.proReports.getPluginUtils().getDateWithTime()
                     )
             );
+
+            id.accept(generatedId);
         });
     }
 

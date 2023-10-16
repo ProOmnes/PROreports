@@ -32,14 +32,14 @@ public class YamlDataAccess implements IDataAccess {
      */
     @Override
     public void createReport(String creator, String target, String reason, Consumer<String> id) {
-        final String generatedId = this.proReports.getPluginUtils().getRandomId(7);
+        final String generatedId = this.proReports.getRandomId(7);
 
         this.reportsData.set("reports." + generatedId + ".creator", creator);
         this.reportsData.set("reports." + generatedId + ".target", target);
         this.reportsData.set("reports." + generatedId + ".reason", reason);
         this.reportsData.set("reports." + generatedId + ".status", "Pending");
         this.reportsData.set("reports." + generatedId + ".moderator", "Unknown");
-        this.reportsData.set("reports." + generatedId + ".date", this.proReports.getPluginUtils().getDateWithTime());
+        this.reportsData.set("reports." + generatedId + ".date", this.proReports.getDateWithTime());
         this.reportsData.save();
         this.reportsData.reload();
 

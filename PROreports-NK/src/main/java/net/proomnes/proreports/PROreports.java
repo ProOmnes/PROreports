@@ -2,7 +2,6 @@ package net.proomnes.proreports;
 
 import cn.nukkit.plugin.PluginBase;
 import lombok.Getter;
-import net.proomnes.proreports.components.utils.PluginUtils;
 import net.proomnes.proreports.dataaccess.IDataAccess;
 import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
@@ -10,14 +9,17 @@ import net.proomnes.proreports.dataaccess.YamlDataAccess;
 import net.proomnes.proreports.services.ReportService;
 import net.proomnes.proreports.util.messages.MessageLoader;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+
 @Getter
 public class PROreports extends PluginBase {
 
     private IDataAccess dataAccess;
 
     private ReportService reportService;
-
-    private PluginUtils pluginUtils;
 
     private MessageLoader messageLoader;
 
@@ -54,8 +56,6 @@ public class PROreports extends PluginBase {
     }
 
     private void loadPlugin() {
-        this.pluginUtils = new PluginUtils();
-
         this.messageLoader = new MessageLoader(this);
 
         this.reportService = new ReportService(this);
@@ -65,4 +65,28 @@ public class PROreports extends PluginBase {
     public void onDisable() {
         super.onDisable();
     }
+
+    public String getRandomId(final int length) {
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        final StringBuilder stringBuilder = new StringBuilder();
+        final Random rnd = new Random();
+        while (stringBuilder.length() < length) {
+            final int index = (int) (rnd.nextFloat() * chars.length());
+            stringBuilder.append(chars.charAt(index));
+        }
+        return stringBuilder.toString();
+    }
+
+    public String getDateWithTime() {
+        final Date now = new Date();
+        final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        return dateFormat.format(now);
+    }
+
+    public String getDate() {
+        final Date now = new Date();
+        final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        return dateFormat.format(now);
+    }
+
 }
