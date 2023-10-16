@@ -7,11 +7,14 @@ import net.proomnes.proreports.dataaccess.IDataAccess;
 import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
 import net.proomnes.proreports.dataaccess.YamlDataAccess;
+import net.proomnes.proreports.services.ReportService;
 
 @Getter
 public class PROreports extends PluginBase {
 
     private IDataAccess dataAccess;
+
+    private ReportService reportService;
 
     private PluginUtils pluginUtils;
 
@@ -49,6 +52,8 @@ public class PROreports extends PluginBase {
 
     private void loadPlugin() {
         this.pluginUtils = new PluginUtils();
+
+        this.reportService = new ReportService(this);
     }
 
     @Override
