@@ -4,7 +4,7 @@ import net.proomnes.easysql.Column;
 import net.proomnes.easysql.Document;
 import net.proomnes.easysql.EasySQL;
 import net.proomnes.proreports.PROreports;
-import net.proomnes.proreports.components.data.Report;
+import net.proomnes.proreports.objects.Report;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -66,7 +66,7 @@ public class MySQLDataAccess implements IDataAccess {
                     ).append(
                             "moderator", "Unknown"
                     ).append(
-                            "date", this.proReports.getPluginUtils().getDateWithTime()
+                            "date", this.proReports.getDateWithTime()
                     )
             );
 

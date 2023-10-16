@@ -1,6 +1,6 @@
 package net.proomnes.proreports.dataaccess;
 
-import net.proomnes.proreports.components.data.Report;
+import net.proomnes.proreports.objects.Report;
 
 import java.util.Set;
 import java.util.function.Consumer;

@@ -2,7 +2,7 @@ package net.proomnes.proreports.services;
 
 import lombok.Getter;
 import net.proomnes.proreports.PROreports;
-import net.proomnes.proreports.components.data.Report;
+import net.proomnes.proreports.objects.Report;
 
 import java.util.HashMap;
 import java.util.Set;

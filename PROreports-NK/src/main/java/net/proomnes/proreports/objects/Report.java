@@ -1,4 +1,4 @@
-package net.proomnes.proreports.components.data;
+package net.proomnes.proreports.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -2,7 +2,7 @@ package net.proomnes.proreports.dataaccess;
 
 import cn.nukkit.utils.Config;
 import net.proomnes.proreports.PROreports;
-import net.proomnes.proreports.components.data.Report;
+import net.proomnes.proreports.objects.Report;
 
 import java.util.HashSet;
 import java.util.Map;

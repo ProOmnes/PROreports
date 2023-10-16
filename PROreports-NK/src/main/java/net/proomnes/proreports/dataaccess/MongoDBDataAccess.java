@@ -5,7 +5,7 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import net.proomnes.proreports.PROreports;
-import net.proomnes.proreports.components.data.Report;
+import net.proomnes.proreports.objects.Report;
 import org.bson.Document;
 
 import java.util.HashSet;
