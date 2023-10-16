@@ -8,6 +8,7 @@ import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
 import net.proomnes.proreports.dataaccess.YamlDataAccess;
 import net.proomnes.proreports.services.ReportService;
+import net.proomnes.proreports.util.messages.MessageLoader;
 
 @Getter
 public class PROreports extends PluginBase {
@@ -17,6 +18,8 @@ public class PROreports extends PluginBase {
     private ReportService reportService;
 
     private PluginUtils pluginUtils;
+
+    private MessageLoader messageLoader;
 
     @Override
     public void onLoad() {
@@ -52,6 +55,8 @@ public class PROreports extends PluginBase {
 
     private void loadPlugin() {
         this.pluginUtils = new PluginUtils();
+
+        this.messageLoader = new MessageLoader(this);
 
         this.reportService = new ReportService(this);
     }

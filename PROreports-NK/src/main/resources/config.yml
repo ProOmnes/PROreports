@@ -1,8 +1,13 @@
-# In this section you can handle some settings to customize your plugin.
+# In this section, you can handle some settings to customize your plugin.
 settings:
   # The standard provider is 'Yaml'. All data will be saved locally in a file.
-  # We recommend to save the data with a database like 'MySQL' or 'MongoDB'.
+  # We recommend saving the data with a database like 'MySQL' or 'MongoDB'.
   provider: Yaml
+
+  # Decide which message file should be loaded and used to display messages. The name of the file must be specified, and it must be located in the 'lang' folder.
+  # Examples: 'en-us' for the American translation; 'de-de' for the German translation.
+  # You can customize these files or create your own language file by copying and renaming them.
+  lang: 'en-us'
 
 # If you set the provider to 'MongoDB', please specify the connection uri and the database.
 mongodb:
