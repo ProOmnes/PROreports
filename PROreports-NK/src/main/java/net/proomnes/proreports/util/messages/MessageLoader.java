@@ -11,11 +11,11 @@ public class MessageLoader {
     private final Map<String, String> cachedMessages = new HashMap<>();
 
     public MessageLoader(final PluginBase pluginBase) {
-        pluginBase.saveResource("/lang/" + pluginBase.getConfig().getString("settings.lang") + ".yml");
-        pluginBase.saveResource("/lang/en-us.yml");
-        pluginBase.saveResource("/lang/de-de.yml");
+        pluginBase.saveResource("lang/" + pluginBase.getConfig().getString("settings.lang") + ".yml");
+        pluginBase.saveResource("lang/en-us.yml");
+        pluginBase.saveResource("lang/de-de.yml");
 
-        final Config config = new Config(pluginBase.getDataFolder() + "/lang/" + pluginBase.getConfig().getString("settings.lang") + ".yml");
+        final Config config = new Config(pluginBase.getDataFolder() + "/lang/" + pluginBase.getConfig().getString("settings.lang") + ".yml", Config.YAML);
         config.getAll().forEach((key, value) -> {
             if (value instanceof String) {
                 this.cachedMessages.put(key, (String) value);
