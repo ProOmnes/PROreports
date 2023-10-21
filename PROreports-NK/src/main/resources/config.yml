@@ -24,3 +24,13 @@ mysql:
 
 # This plugin stores the credentials for the database only in this file. The plugin uses this data only to
 # connect to the databases. This data is not shared or stored for other applications.
+
+commands:
+  report:
+    name: "report"
+    description: "Report a player."
+    aliases: [ "createreport", "rep", "ticket" ]
+  reportmanager:
+    name: "reportmanager"
+    description: "Manage all reports as a moderator."
+    aliases: [ "managereports", "mr" ]

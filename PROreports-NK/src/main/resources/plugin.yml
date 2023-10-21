@@ -1,5 +1,6 @@
 name: PROreports
 version: 1.0.0-SNAPSHOT
+api: 1.0.0
 author: Jan Pretzer
 description: An advanced report system
 main: net.proomnes.proreports.PROreports

@@ -2,11 +2,15 @@ package net.proomnes.proreports;
 
 import cn.nukkit.plugin.PluginBase;
 import lombok.Getter;
+import net.proomnes.formapi.FormHandler;
+import net.proomnes.proreports.commands.ReportCommand;
+import net.proomnes.proreports.commands.ReportManagerCommand;
 import net.proomnes.proreports.dataaccess.IDataAccess;
 import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
 import net.proomnes.proreports.dataaccess.YamlDataAccess;
 import net.proomnes.proreports.services.ReportService;
+import net.proomnes.proreports.util.forms.FormWindows;
 import net.proomnes.proreports.util.messages.MessageLoader;
 
 import java.text.DateFormat;
@@ -20,6 +24,10 @@ public class PROreports extends PluginBase {
     private IDataAccess dataAccess;
 
     private ReportService reportService;
+
+    private FormWindows formWindows;
+
+    private FormHandler formHandler;
 
     private MessageLoader messageLoader;
 
@@ -56,9 +64,17 @@ public class PROreports extends PluginBase {
     }
 
     private void loadPlugin() {
+        // utils
         this.messageLoader = new MessageLoader(this);
+        this.formHandler = new FormHandler(this);
+        this.formWindows = new FormWindows(this);
 
+        // services
         this.reportService = new ReportService(this);
+
+        // commands
+        this.getServer().getCommandMap().register("proreports", new ReportCommand(this));
+        this.getServer().getCommandMap().register("proreports", new ReportManagerCommand(this));
     }
 
     @Override
