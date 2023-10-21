@@ -173,48 +173,54 @@ public class YamlDataAccess implements IDataAccess {
             case BY_CREATOR:
                 this.reportsData.getSection("reports").getAll().getKeys().forEach(id -> {
                     if (this.reportsData.getString("reports." + id + ".creator").equals(value)) {
-                        reportSet.add(new Report(
-                                id,
-                                this.reportsData.getString("reports." + id + ".creator"),
-                                this.reportsData.getString("reports." + id + ".target"),
-                                this.reportsData.getString("reports." + id + ".reason"),
-                                Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
-                                        .replace(" ", "_").toUpperCase()),
-                                this.reportsData.getString("reports." + id + ".moderator"),
-                                this.reportsData.getString("reports." + id + ".date")
-                        ));
+                        if (this.reportsData.getString("reports." + id + ".status").equals(status.getName())) {
+                            reportSet.add(new Report(
+                                    id,
+                                    this.reportsData.getString("reports." + id + ".creator"),
+                                    this.reportsData.getString("reports." + id + ".target"),
+                                    this.reportsData.getString("reports." + id + ".reason"),
+                                    Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
+                                            .replace(" ", "_").toUpperCase()),
+                                    this.reportsData.getString("reports." + id + ".moderator"),
+                                    this.reportsData.getString("reports." + id + ".date")
+                            ));
+                        }
                     }
                 });
                 break;
             case BY_TARGET:
                 this.reportsData.getSection("reports").getAll().getKeys().forEach(id -> {
                     if (this.reportsData.getString("reports." + id + ".target").equals(value)) {
-                        reportSet.add(new Report(
-                                id,
-                                this.reportsData.getString("reports." + id + ".creator"),
-                                this.reportsData.getString("reports." + id + ".target"),
-                                this.reportsData.getString("reports." + id + ".reason"),
-                                Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
-                                        .replace(" ", "_").toUpperCase()),
-                                this.reportsData.getString("reports." + id + ".moderator"),
-                                this.reportsData.getString("reports." + id + ".date")
-                        ));
+                        if (this.reportsData.getString("reports." + id + ".status").equals(status.getName())) {
+                            reportSet.add(new Report(
+                                    id,
+                                    this.reportsData.getString("reports." + id + ".creator"),
+                                    this.reportsData.getString("reports." + id + ".target"),
+                                    this.reportsData.getString("reports." + id + ".reason"),
+                                    Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
+                                            .replace(" ", "_").toUpperCase()),
+                                    this.reportsData.getString("reports." + id + ".moderator"),
+                                    this.reportsData.getString("reports." + id + ".date")
+                            ));
+                        }
                     }
                 });
                 break;
             case BY_MODERATOR:
                 this.reportsData.getSection("reports").getAll().getKeys().forEach(id -> {
                     if (this.reportsData.getString("reports." + id + ".moderator").equals(value)) {
-                        reportSet.add(new Report(
-                                id,
-                                this.reportsData.getString("reports." + id + ".creator"),
-                                this.reportsData.getString("reports." + id + ".target"),
-                                this.reportsData.getString("reports." + id + ".reason"),
-                                Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
-                                        .replace(" ", "_").toUpperCase()),
-                                this.reportsData.getString("reports." + id + ".moderator"),
-                                this.reportsData.getString("reports." + id + ".date")
-                        ));
+                        if (this.reportsData.getString("reports." + id + ".status").equals(status.getName())) {
+                            reportSet.add(new Report(
+                                    id,
+                                    this.reportsData.getString("reports." + id + ".creator"),
+                                    this.reportsData.getString("reports." + id + ".target"),
+                                    this.reportsData.getString("reports." + id + ".reason"),
+                                    Report.Status.valueOf(this.reportsData.getString("reports." + id + ".status")
+                                            .replace(" ", "_").toUpperCase()),
+                                    this.reportsData.getString("reports." + id + ".moderator"),
+                                    this.reportsData.getString("reports." + id + ".date")
+                            ));
+                        }
                     }
                 });
                 break;
