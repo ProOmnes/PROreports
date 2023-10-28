@@ -3,6 +3,7 @@ package net.proomnes.proreports;
 import cn.nukkit.plugin.PluginBase;
 import lombok.Getter;
 import net.proomnes.formapi.FormHandler;
+import net.proomnes.proreports.commands.MyReportsCommand;
 import net.proomnes.proreports.commands.ReportCommand;
 import net.proomnes.proreports.commands.ReportManagerCommand;
 import net.proomnes.proreports.dataaccess.IDataAccess;
@@ -74,6 +75,7 @@ public class PROreports extends PluginBase {
 
         // commands
         this.getServer().getCommandMap().register("proreports", new ReportCommand(this));
+        this.getServer().getCommandMap().register("proreports", new MyReportsCommand(this));
         this.getServer().getCommandMap().register("proreports", new ReportManagerCommand(this));
     }
 

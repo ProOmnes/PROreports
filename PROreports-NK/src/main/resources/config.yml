@@ -30,6 +30,10 @@ commands:
     name: "report"
     description: "Report a player."
     aliases: [ "createreport", "rep", "ticket" ]
+  myreports:
+    name: "myreports"
+    description: "Look up your own reports"
+    aliases: [ "myr", "reports" ]
   reportmanager:
     name: "reportmanager"
     description: "Manage all reports as a moderator."

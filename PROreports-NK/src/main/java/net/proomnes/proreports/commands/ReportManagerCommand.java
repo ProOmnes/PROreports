@@ -9,8 +9,6 @@ import net.proomnes.proreports.PROreports;
 
 public class ReportManagerCommand extends PluginCommand<PROreports> {
 
-    final PROreports proReports;
-
     public ReportManagerCommand(final PROreports proReports) {
         super(proReports.getConfig().getString("commands.reportmanager.name"), proReports);
         this.setPermission("proreports.role.moderator");
@@ -20,15 +18,13 @@ public class ReportManagerCommand extends PluginCommand<PROreports> {
         this.commandParameters.put("default", new CommandParameter[]{
                 new CommandParameter("player", CommandParamType.TARGET, false),
         });
-
-        this.proReports = proReports;
     }
 
     @Override
     public boolean execute(CommandSender sender, String s, String[] args) {
         if (!this.testPermission(sender)) return true;
         if (sender instanceof Player) {
-            this.proReports.getFormWindows().openReportManagement((Player) sender);
+            this.getPlugin().getFormWindows().openReportManagement((Player) sender);
         }
         return false;
     }
