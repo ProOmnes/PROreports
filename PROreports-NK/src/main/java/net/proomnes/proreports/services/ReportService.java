@@ -22,8 +22,9 @@ public class ReportService {
         this.proReports.getDataAccess().createReport(creator, target, reason, (id) -> {
             this.cachedReports.put(id, new Report(
                     id, creator, target, reason, Report.Status.PENDING, "Unknown",
-                    this.proReports.getPluginUtils().getDateWithTime()
+                    this.proReports.getDateWithTime()
             ));
+            callbackId.accept(id);
         });
     }
 
