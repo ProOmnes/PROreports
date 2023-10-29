@@ -10,6 +10,7 @@ import net.proomnes.proreports.dataaccess.IDataAccess;
 import net.proomnes.proreports.dataaccess.MongoDBDataAccess;
 import net.proomnes.proreports.dataaccess.MySQLDataAccess;
 import net.proomnes.proreports.dataaccess.YamlDataAccess;
+import net.proomnes.proreports.listeners.EventListener;
 import net.proomnes.proreports.services.ReportService;
 import net.proomnes.proreports.util.forms.FormWindows;
 import net.proomnes.proreports.util.messages.MessageLoader;
@@ -72,6 +73,9 @@ public class PROreports extends PluginBase {
 
         // services
         this.reportService = new ReportService(this);
+
+        // listeners
+        this.getServer().getPluginManager().registerEvents(new EventListener(this), this);
 
         // commands
         this.getServer().getCommandMap().register("proreports", new ReportCommand(this));

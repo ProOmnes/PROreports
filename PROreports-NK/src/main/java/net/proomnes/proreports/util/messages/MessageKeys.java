@@ -15,6 +15,7 @@ public enum MessageKeys {
      */
     REPORT_SEND("report.send", "§aYou have successfully reported player §e{0} §afor §e{1}§a. §7[§e{2}§7]", true),
     REPORT_CLOSED("report.closed", "§aYou successfully closed the report. §7[§e{0}§7]", true),
+    REPORT_JOIN_INFO("report.join.info", "§7There are currently §e{0} reports §7open.", true),
     REPORT_ERROR_TARGET("report.error.target", "§cPlease enter a valid player name.", true),
     REPORT_ERROR_REASON("report.error.reason", "§cPlease provide a valid reason.", true),
     REPORT_ERROR_ALREADY_REPORTED("report.error.already.reported", "§cYou have already reported this player. Please wait while your report is being processed.", true),

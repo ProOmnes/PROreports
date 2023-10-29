@@ -30,8 +30,8 @@ public class FormWindows {
     public void openCreateReport(final Player requester, final String target) {
         final List<String> onlinePlayers = new ArrayList<>();
         onlinePlayers.add(this.messageLoader.get(MessageKeys.UI_CREATE_REPORT_SELECT_PLAYER));
-        onlinePlayers.remove(requester.getName());
         this.proReports.getServer().getOnlinePlayers().values().forEach(onlinePlayer -> onlinePlayers.add(onlinePlayer.getName()));
+        onlinePlayers.remove(requester.getName());
 
         final CustomForm form = new CustomForm.Builder(this.messageLoader.get(MessageKeys.UI_CREATE_REPORT_TITLE))
                 .addElement(new ElementDropdown(
