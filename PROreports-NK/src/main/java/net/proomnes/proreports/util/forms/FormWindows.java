@@ -8,6 +8,7 @@ import cn.nukkit.form.element.ElementInput;
 import net.proomnes.formapi.form.CustomForm;
 import net.proomnes.formapi.form.SimpleForm;
 import net.proomnes.proreports.PROreports;
+import net.proomnes.proreports.events.ReportCloseEvent;
 import net.proomnes.proreports.objects.Report;
 import net.proomnes.proreports.util.messages.MessageKeys;
 import net.proomnes.proreports.util.messages.MessageLoader;
@@ -204,7 +205,7 @@ public class FormWindows {
         if (report.getModerator().equals(requester.getName()) && requester.hasPermission("proreports.role.moderator")) {
             if (report.getStatus() == Report.Status.IN_PROGRESS) {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_SOLVE), new ElementButtonImageData("url", "")), submitter -> {
-                    this.proReports.getReportService().closeReport(report.getId());
+                    this.proReports.getReportService().closeReport(report.getId(), ReportCloseEvent.CloseType.BY_MODERATOR);
                     submitter.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_SOLVE_REPORT, report.getId()));
                 });
             }
@@ -213,7 +214,7 @@ public class FormWindows {
         if (report.getCreator().equals(requester.getName())) {
             if (report.getStatus() != Report.Status.CLOSED) {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_CLOSE), new ElementButtonImageData("url", "")), submitter -> {
-                    this.proReports.getReportService().closeReport(report.getId());
+                    this.proReports.getReportService().closeReport(report.getId(), ReportCloseEvent.CloseType.BY_CREATOR);
                     submitter.sendMessage(this.messageLoader.get(MessageKeys.REPORT_CLOSED, report.getId()));
                 });
             }

@@ -2,6 +2,9 @@ package net.proomnes.proreports.services;
 
 import lombok.Getter;
 import net.proomnes.proreports.PROreports;
+import net.proomnes.proreports.events.ReportCloseEvent;
+import net.proomnes.proreports.events.ReportCreateEvent;
+import net.proomnes.proreports.events.ReportUpdateEvent;
 import net.proomnes.proreports.objects.Report;
 
 import java.util.HashMap;
@@ -24,6 +27,7 @@ public class ReportService {
                     id, creator, target, reason, Report.Status.PENDING, "Unknown",
                     this.proReports.getDateWithTime()
             ));
+            this.proReports.getServer().getPluginManager().callEvent(new ReportCreateEvent(this.cachedReports.get(id)));
             callbackId.accept(id);
         });
     }
@@ -37,9 +41,10 @@ public class ReportService {
         this.proReports.getDataAccess().hasReported(creator, target, hasReported);
     }
 
-    public void closeReport(final String id) {
+    public void closeReport(final String id, final ReportCloseEvent.CloseType closeType) {
         this.proReports.getDataAccess().closeReport(id);
         this.cachedReports.get(id).setStatus(Report.Status.CLOSED);
+        this.proReports.getServer().getPluginManager().callEvent(new ReportCloseEvent(this.cachedReports.get(id), closeType));
     }
 
     public void reportIdExists(final String id, final Consumer<Boolean> exists) {
@@ -47,13 +52,17 @@ public class ReportService {
     }
 
     public void updateStatus(final String id, final Report.Status status) {
+        final Report oldData = this.cachedReports.get(id);
         this.proReports.getDataAccess().updateStatus(id, status);
         this.cachedReports.get(id).setStatus(status);
+        this.proReports.getServer().getPluginManager().callEvent(new ReportUpdateEvent(ReportUpdateEvent.UpdateType.STATUS, oldData, this.cachedReports.get(id)));
     }
 
     public void updateModerator(final String id, final String moderator) {
+        final Report oldData = this.cachedReports.get(id);
         this.proReports.getDataAccess().updateModerator(id, moderator);
         this.cachedReports.get(id).setModerator(moderator);
+        this.proReports.getServer().getPluginManager().callEvent(new ReportUpdateEvent(ReportUpdateEvent.UpdateType.MODERATOR, oldData, this.cachedReports.get(id)));
     }
 
     public void getReport(final String id, final Consumer<Report> callbackReport) {
