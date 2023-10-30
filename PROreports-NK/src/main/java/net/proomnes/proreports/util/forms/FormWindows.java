@@ -91,15 +91,15 @@ public class FormWindows {
         final SimpleForm form = new SimpleForm.Builder(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_TITLE),
                 this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_CONTENT))
                 .addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_OPEN_REPORTS),
-                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/proreports/d0d8d346-efcf-48d8-9b94-39a532d32ed2.png")),
+                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/d0d8d346-efcf-48d8-9b94-39a532d32ed2.png")),
                         this::openPendingReports
                 )
                 .addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_MANAGE_REPORTS),
-                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/proreports/107eef76-a9c7-4b60-988f-07fe90c9b5b7.png")),
+                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/107eef76-a9c7-4b60-988f-07fe90c9b5b7.png")),
                         this::openMyManagementReports
                 )
                 .addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_SEARCH_REPORTS),
-                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/proreports/4bac3329-2d97-435d-8780-e07009f269e9.png")),
+                                new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/4bac3329-2d97-435d-8780-e07009f269e9.png")),
                         this::openSearchReports
                 )
                 .build();
@@ -121,7 +121,7 @@ public class FormWindows {
                         });
             });
         });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openReportManagement);
+        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
         form.build().show(requester);
     }
@@ -141,7 +141,7 @@ public class FormWindows {
                         });
             });
         });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openReportManagement);
+        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
         form.build().show(requester);
     }
@@ -182,7 +182,7 @@ public class FormWindows {
                         });
             });
         });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openReportManagement);
+        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
         form.build().show(requester);
     }
@@ -194,7 +194,7 @@ public class FormWindows {
 
         if (report.getModerator().equals("Unknown") && requester.hasPermission("proreports.role.moderator")) {
             if (report.getStatus() == Report.Status.PENDING) {
-                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_TAKE), new ElementButtonImageData("url", "")), submitter -> {
+                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_TAKE), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/96917e4f-3380-4b1a-a45a-7a3d71077b84.png")), submitter -> {
                     this.proReports.getReportService().updateModerator(report.getId(), submitter.getName());
                     this.proReports.getReportService().updateStatus(report.getId(), Report.Status.IN_PROGRESS);
                     submitter.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_TAKE_REPORT, report.getId()));
@@ -204,7 +204,7 @@ public class FormWindows {
 
         if (report.getModerator().equals(requester.getName()) && requester.hasPermission("proreports.role.moderator")) {
             if (report.getStatus() == Report.Status.IN_PROGRESS) {
-                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_SOLVE), new ElementButtonImageData("url", "")), submitter -> {
+                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_SOLVE), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/6a98b9d9-77f3-4bca-8624-ce67fa7de388.png")), submitter -> {
                     this.proReports.getReportService().closeReport(report.getId(), ReportCloseEvent.CloseType.BY_MODERATOR);
                     submitter.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_SOLVE_REPORT, report.getId()));
                 });
@@ -213,7 +213,7 @@ public class FormWindows {
 
         if (report.getCreator().equals(requester.getName())) {
             if (report.getStatus() != Report.Status.CLOSED) {
-                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_CLOSE), new ElementButtonImageData("url", "")), submitter -> {
+                form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_BUTTON_CLOSE), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/d545414a-6930-46c9-86f1-3521ce0ff7a7.png")), submitter -> {
                     this.proReports.getReportService().closeReport(report.getId(), ReportCloseEvent.CloseType.BY_CREATOR);
                     submitter.sendMessage(this.messageLoader.get(MessageKeys.REPORT_CLOSED, report.getId()));
                 });
@@ -221,9 +221,9 @@ public class FormWindows {
         }
 
         if (requester.hasPermission("proreports.role.moderator") && !report.getTarget().equals(requester.getName())) {
-            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openReportManagement);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
         } else {
-            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openMyReports);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openMyReports);
         }
 
         form.build().show(requester);
@@ -255,7 +255,7 @@ public class FormWindows {
                         });
             });
         });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "")), this::openMyReports);
+        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openMyReports);
 
         form.build().show(requester);
     }
