@@ -19,6 +19,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Getter
 public class PROreports extends PluginBase {
@@ -55,6 +57,8 @@ public class PROreports extends PluginBase {
                 break;
             case "MongoDB":
                 this.dataAccess = new MongoDBDataAccess(this);
+                final Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+                mongoLogger.setLevel(Level.OFF);
                 break;
             case "MySQL":
                 this.dataAccess = new MySQLDataAccess(this);

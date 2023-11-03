@@ -73,11 +73,21 @@ public class ReportService {
     }
 
     public void getReports(final Report.Status status, final Report.SearchType searchType, final String value, final Consumer<Set<Report>> reports) {
-        this.proReports.getDataAccess().getReports(status, searchType, value, reports);
+        this.proReports.getDataAccess().getReports(status, searchType, value, reportSet -> {
+            reportSet.forEach(report -> {
+                if (!this.cachedReports.containsKey(report.getId())) this.cachedReports.put(report.getId(), report);
+            });
+            reports.accept(reportSet);
+        });
     }
 
     public void getReports(final Report.Status status, final Consumer<Set<Report>> reports) {
-        this.proReports.getDataAccess().getReports(status, reports);
+        this.proReports.getDataAccess().getReports(status, reportSet -> {
+            reportSet.forEach(report -> {
+                if (!this.cachedReports.containsKey(report.getId())) this.cachedReports.put(report.getId(), report);
+            });
+            reports.accept(reportSet);
+        });
     }
 
 }

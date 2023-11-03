@@ -110,40 +110,42 @@ public class FormWindows {
         final SimpleForm.Builder form = new SimpleForm.Builder(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_PENDING_TITLE), this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_PENDING_CONTENT));
 
         this.proReports.getReportService().getReports(Report.Status.PENDING, reports -> {
-            /*if (reports.isEmpty()) {
+            if (reports.isEmpty()) {
                 requester.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_ERROR_PENDING));
                 return;
-            }*/
+            }
             reports.forEach(report -> {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_PENDING_REPORT, report.getId(), report.getCreator(), report.getTarget(), report.getReason())),
                         submitter -> {
                             this.openReport(submitter, report);
                         });
             });
-        });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
-        form.build().show(requester);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
+
+            form.build().show(requester);
+        });
     }
 
     public void openMyManagementReports(final Player requester) {
         final SimpleForm.Builder form = new SimpleForm.Builder(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_MODERATOR_TITLE), this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_MODERATOR_CONTENT));
 
         this.proReports.getReportService().getReports(Report.Status.IN_PROGRESS, Report.SearchType.BY_MODERATOR, requester.getName(), reports -> {
-            /*if (reports.isEmpty()) {
+            if (reports.isEmpty()) {
                 requester.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_ERROR_TAKE));
                 return;
-            }*/
+            }
             reports.forEach(report -> {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_MODERATOR_REPORT, report.getId(), report.getCreator(), report.getTarget(), report.getReason())),
                         submitter -> {
                             this.openReport(submitter, report);
                         });
             });
-        });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
-        form.build().show(requester);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
+
+            form.build().show(requester);
+        });
     }
 
     public void openSearchReports(final Player requester) {
@@ -171,20 +173,21 @@ public class FormWindows {
         final SimpleForm.Builder form = new SimpleForm.Builder(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_SEARCH_RESULT_TITLE), this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_SEARCH_RESULT_CONTENT));
 
         this.proReports.getReportService().getReports(status, searchType, value, reports -> {
-            /*if (reports.isEmpty()) {
+            if (reports.isEmpty()) {
                 requester.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_ERROR_RESULT));
                 return;
-            }*/
+            }
             reports.forEach(report -> {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_REPORT_MANAGEMENT_SEARCH_RESULT_REPORT, report.getId(), report.getCreator(), report.getTarget(), report.getReason())),
                         submitter -> {
                             this.openReport(submitter, report);
                         });
             });
-        });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
 
-        form.build().show(requester);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openReportManagement);
+
+            form.build().show(requester);
+        });
     }
 
     public void openReport(final Player requester, final Report report) {
@@ -244,20 +247,21 @@ public class FormWindows {
         final SimpleForm.Builder form = new SimpleForm.Builder(this.messageLoader.get(MessageKeys.UI_MY_REPORTS_RESULT_TITLE), this.messageLoader.get(MessageKeys.UI_MY_REPORTS_RESULT_CONTENT));
 
         this.proReports.getReportService().getReports(status, Report.SearchType.BY_CREATOR, requester.getName(), reports -> {
-            /*if (reports.isEmpty()) {
+            if (reports.isEmpty()) {
                 requester.sendMessage(this.messageLoader.get(MessageKeys.REPORT_MANAGEMENT_ERROR_RESULT));
                 return;
-            }*/
+            }
             reports.forEach(report -> {
                 form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_MY_REPORTS_RESULT_REPORT, report.getId(), report.getCreator(), report.getTarget(), report.getReason())),
                         submitter -> {
                             this.openReport(submitter, report);
                         });
             });
-        });
-        form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openMyReports);
 
-        form.build().show(requester);
+            form.addElement(new ElementButton(this.messageLoader.get(MessageKeys.UI_BUTTON_BACK), new ElementButtonImageData("url", "https://form-images-nk.proomnes.net/img/41a1a4fa-67b7-4d72-8f70-39020a91607d.png")), this::openMyReports);
+
+            form.build().show(requester);
+        });
     }
 
 }

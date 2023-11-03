@@ -38,3 +38,6 @@ commands:
     name: "reportmanager"
     description: "Manage all reports as a moderator."
     aliases: [ "managereports", "mr" ]
+
+# Do not edit the config version!
+version: 1
