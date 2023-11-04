@@ -2,81 +2,63 @@
 system.prefix: "§8» §cReports §8| §7"
 
 # Plugin messages
-report:
-  send: "§aYou have successfully reported player §e{0} §afor §e{1}§a. §7[§e{2}§7]"
-  closed: "§aYou successfully closed the report. §7[§e{0}§7]"
-  join.info: "§7There are currently §e{0} reports §7open."
-  error:
-    target: "§cPlease enter a valid player name."
-    reason: "§cPlease provide a valid reason."
-    already.reported: "§cYou have already reported this player. Please wait while your report is being processed."
-    self: "§cYou are not allowed to report yourself!"
-  management:
-    error:
-      search: "§cPlease specify a valid player name to look up for reports."
-      result: "§cNo reports were found."
-      pending: "§cThere are no pending reports at the moment."
-      take: "§cYou do not have any reports to manage."
-    take.report: "§aYou have successfully taken the report. You can now edit it under your reports. §7[§e{0}§7]"
-    solve.report: "§aYou have successfully finished the report. The status is now §eClosed§a. §7[§e{0}§7]"
+report.send: "§aYou have successfully reported player §e{0} §afor §e{1}§a. §7[§e{2}§7]"
+report.closed: "§aYou successfully closed the report. §7[§e{0}§7]"
+report.join.info: "§7There are currently §e{0} reports §7open."
+report.error.target: "§cPlease enter a valid player name."
+report.error.reason: "§cPlease provide a valid reason."
+report.error.already.reported: "§cYou have already reported this player. Please wait while your report is being processed."
+report.error.self: "§cYou are not allowed to report yourself!"
+report.management.error.search: "§cPlease specify a valid player name to look up for reports."
+report.management.error.result: "§cNo reports were found."
+report.management.error.pending: "§cThere are no pending reports at the moment."
+report.management.error.take: "§cYou do not have any reports to manage."
+report.management.take.report: "§aYou have successfully taken the report. You can now edit it under your reports. §7[§e{0}§7]"
+report.management.solve.report: "§aYou have successfully finished the report. The status is now §eClosed§a. §7[§e{0}§7]"
 
 # UI displays
-ui:
-  button:
-    back: "§8» §cBack"
+ui.button.back: "§8» §cBack"
 
-  create:
-    report:
-      title: "§8» §fCreate new report"
-      select.player: "> Select a player... <"
-      select.player.info: "§8» §7Select a player who is currently online."
-      target.info: "§8» §7Specify a player to be reported. §6If you already selected a player, this field can be ignored."
-      target.placeholder: "SomeName123"
-      reason.info: "§8» §7Please provide a reason for the report."
-      reason.placeholder: "Hacking"
+ui.create.report.title: "§8» §fCreate new report"
+ui.create.report.select.player: "> Select a player... <"
+ui.create.report.select.player.info: "§8» §7Select a player who is currently online."
+ui.create.report.target.info: "§8» §7Specify a player to be reported. §6If you already selected a player, this field can be ignored."
+ui.create.report.target.placeholder: "SomeName123"
+ui.create.report.reason.info: "§8» §7Please provide a reason for the report."
+ui.create.report.reason.placeholder: "Hacking"
 
-  report:
-    title: "§8» §fReport {0}"
-    content: "§eReport ID: §7{0}\n\n§bCreator: §7{1}\n§bTarget: §7{2}\n§bReason: §7{3}\n§bStatus: §7{4}\n§bModerator: §7{5}\n§bDate: §7{6}\n"
-    button:
-      take: "§8» §9Take report"
-      solve: "§8» §2Solve report"
-      close: "§8» §4Close report"
+ui.report.title: "§8» §fReport {0}"
+ui.report.content: "§eReport ID: §7{0}\n\n§bCreator: §7{1}\n§bTarget: §7{2}\n§bReason: §7{3}\n§bStatus: §7{4}\n§bModerator: §7{5}\n§bDate: §7{6}\n"
+ui.report.button.take: "§8» §9Take report"
+ui.report.button.solve: "§8» §2Solve report"
+ui.report.button.close: "§8» §4Close report"
 
-    management:
-      title: "§8» §fReport Management"
-      content: "§8» §7Here you can take open reports and process your own reports as a moderator."
-      button:
-        open: "§8» §fSee pending reports"
-        manage: "§8» §fSee my reports"
-        search: "§8» §fLook up for reports"
+ui.report.management.title: "§8» §fReport Management"
+ui.report.management.content: "§8» §7Here you can take open reports and process your own reports as a moderator."
+ui.report.management.button.open: "§8» §fSee pending reports"
+ui.report.management.button.manage: "§8» §fSee my reports"
+ui.report.management.button.search: "§8» §fLook up for reports"
 
-      pending:
-        title: "§8» §fPending reports"
-        content: "§8» §7All open reports are listed here. Click on a report to get more information."
-        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.pending.title: "§8» §fPending reports"
+ui.report.management.pending.content: "§8» §7All open reports are listed here. Click on a report to get more information."
+ui.report.management.pending.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-      moderator:
-        title: "§8» §fMy managed reports"
-        content: "§8» §7Here are all the pending reports you are currently processing as a moderator. Click on a report to process it."
-        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.moderator.title: "§8» §fMy managed reports"
+ui.report.management.moderator.content: "§8» §7Here are all the pending reports you are currently processing as a moderator. Click on a report to process it."
+ui.report.management.moderator.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-      search:
-        title: "§8» §fLook up for reports"
-        progress: "§8» §7Please select a status."
-        type: "§8» §7Please select a search type."
-        value: "§8» §7Please specify a valid player name."
-        value.placeholder: "Player007"
-        result:
-          title: "§8» §fResults"
-          content: "§8» §7These are all reports that were found. Click on a report to get more information."
-          report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.search.title: "§8» §fLook up for reports"
+ui.report.management.search.progress: "§8» §7Please select a status."
+ui.report.management.search.type: "§8» §7Please select a search type."
+ui.report.management.search.value: "§8» §7Please specify a valid player name."
+ui.report.management.search.value.placeholder: "Player007"
+ui.report.management.search.result.title: "§8» §fResults"
+ui.report.management.search.result.content: "§8» §7These are all reports that were found. Click on a report to get more information."
+ui.report.management.search.result.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-  myreports:
-    title: "§8» §fMy reports"
-    info: "§8» §7Please select a report status."
+ui.myreports.title: "§8» §fMy reports"
+ui.myreports.info: "§8» §7Please select a report status."
 
-    result:
-      title: "§8» §fResults"
-      content: "§8» §7These are all reports that were found. Click on a report to get more information."
-      report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.myreports.result.title: "§8» §fResults"
+ui.myreports.result.content: "§8» §7These are all reports that were found. Click on a report to get more information."
+ui.myreports.result.report: "§8» §f{0} §8| §e{1}\n§f{3}"

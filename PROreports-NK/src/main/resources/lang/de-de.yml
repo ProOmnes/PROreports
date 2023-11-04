@@ -2,81 +2,63 @@
 system.prefix: "§8» §cReports §8| §7"
 
 # Plugin messages
-report:
-  send: "§aDu hast erfolgreich den Spieler §e{0} §afür §e{1}§a gemeldet. §7[§e{2}§7]"
-  closed: "§aDu hast den Report erfolgreich geschlossen. §7[§e{0}§7]"
-  join.info: "§7Es sind derzeit §e{0} Reports §7offen."
-  error:
-    target: "§cBitte gebe einen gültigen Spielernamen an."
-    reason: "§cBitte gebe einen gültigen Grund an."
-    already.reported: "§cDu hast diesen Spieler bereits gemeldet. Bitte warte erst, bis dieser bearbeitet wurde."
-    self: "§cDu darfst dich selbst nicht melden!"
-  management:
-    error:
-      search: "§cBitte gebe einen gültigen Spielernamen an, um nach Reports zu suchen."
-      result: "§cEs wurden keine Reports gefunden."
-      pending: "§cAktuell gibt es keine unbearbeiteten Reports."
-      take: "§cDu hast zur Zeit keine Reports, die du bearbeitest."
-    take.report: "§aDu hast den Report erfolgreich angenommen. Du kannst diesen nun unter deinen Reports bearbeiten. §7[§e{0}§7]"
-    solve.report: "§aDu hast den Report erfolgreich abgearbeitet. Der Report-Status wurde nun auf §eClosed §agesetzt. §7[§e{0}§7]"
+report.send: "§aDu hast erfolgreich den Spieler §e{0} §afür §e{1}§a gemeldet. §7[§e{2}§7]"
+report.closed: "§aDu hast den Report erfolgreich geschlossen. §7[§e{0}§7]"
+report.join.info: "§7Es sind derzeit §e{0} Reports §7offen."
+report.error.target: "§cBitte gebe einen gültigen Spielernamen an."
+report.error.reason: "§cBitte gebe einen gültigen Grund an."
+report.error.already.reported: "§cDu hast diesen Spieler bereits gemeldet. Bitte warte erst, bis dieser bearbeitet wurde."
+report.error.self: "§cDu darfst dich selbst nicht melden!"
+report.management.error.search: "§cBitte gebe einen gültigen Spielernamen an, um nach Reports zu suchen."
+report.management.error.result: "§cEs wurden keine Reports gefunden."
+report.management.error.pending: "§cAktuell gibt es keine unbearbeiteten Reports."
+report.management.error.take: "§cDu hast zur Zeit keine Reports, die du bearbeitest."
+report.management.take.report: "§aDu hast den Report erfolgreich angenommen. Du kannst diesen nun unter deinen Reports bearbeiten. §7[§e{0}§7]"
+report.management.solve.report: "§aDu hast den Report erfolgreich abgearbeitet. Der Report-Status wurde nun auf §eClosed §agesetzt. §7[§e{0}§7]"
 
 # UI displays
-ui:
-  button:
-    back: "§8» §cZurück"
+ui.button.back: "§8» §cZurück"
 
-  create:
-    report:
-      title: "§8» §fNeuen Report erstellen"
-      select.player: "> Wähle einen Spieler... <"
-      select.player.info: "§8» §7Wähle einen Spieler, der aktuell online ist."
-      target.info: "§8» §7Gebe einen Spieler an, der gemeldet werden soll. §6Wenn du bereits einen Spieler ausgewählt hast, der online ist, kannst du dieses Feld ignorieren."
-      target.placeholder: "Jemand123"
-      reason.info: "§8» §7Bitte gebe einen Grund für deine Meldung an."
-      reason.placeholder: "Hacking"
+ui.create.report.title: "§8» §fNeuen Report erstellen"
+ui.create.report.select.player: "> Wähle einen Spieler... <"
+ui.create.report.select.player.info: "§8» §7Wähle einen Spieler, der aktuell online ist."
+ui.create.report.target.info: "§8» §7Gebe einen Spieler an, der gemeldet werden soll. §6Wenn du bereits einen Spieler ausgewählt hast, der online ist, kannst du dieses Feld ignorieren."
+ui.create.report.target.placeholder: "Jemand123"
+ui.create.report.reason.info: "§8» §7Bitte gebe einen Grund für deine Meldung an."
+ui.create.report.reason.placeholder: "Hacking"
 
-  report:
-    title: "§8» §fReport {0}"
-    content: "§eReport ID: §7{0}\n\n§bErsteller: §7{1}\n§bGemeldet: §7{2}\n§bGrund: §7{3}\n§bStatus: §7{4}\n§bModerator: §7{5}\n§bDatum: §7{6}\n"
-    button:
-      take: "§8» §9Report annehmen"
-      solve: "§8» §2Report fertigstellen"
-      close: "§8» §4Report schließen"
+ui.report.title: "§8» §fReport {0}"
+ui.report.content: "§eReport ID: §7{0}\n\n§bErsteller: §7{1}\n§bGemeldet: §7{2}\n§bGrund: §7{3}\n§bStatus: §7{4}\n§bModerator: §7{5}\n§bDatum: §7{6}\n"
+ui.report.button.take: "§8» §9Report annehmen"
+ui.report.button.solve: "§8» §2Report fertigstellen"
+ui.report.button.close: "§8» §4Report schließen"
 
-    management:
-      title: "§8» §fReport Management"
-      content: "§8» §7Hier kannst du unbearbeitete Reports annehmen und deine angenommenen Reports bearbeiten."
-      button:
-        open: "§8» §fUnbearbeitete Reports"
-        manage: "§8» §fMeine offenen Reports"
-        search: "§8» §fSuche nach Reports"
+ui.report.management.title: "§8» §fReport Management"
+ui.report.management.content: "§8» §7Hier kannst du unbearbeitete Reports annehmen und deine angenommenen Reports bearbeiten."
+ui.report.management.button.open: "§8» §fUnbearbeitete Reports"
+ui.report.management.button.manage: "§8» §fMeine offenen Reports"
+ui.report.management.button.search: "§8» §fSuche nach Reports"
 
-      pending:
-        title: "§8» §fUnbearbeitete reports"
-        content: "§8» §7Alle unbearbeiteten Reports sind hier aufgelistet. Wähle einen Report aus, um weitere Informationen zu erhalten."
-        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.pending.title: "§8» §fUnbearbeitete reports"
+ui.report.management.pending.content: "§8» §7Alle unbearbeiteten Reports sind hier aufgelistet. Wähle einen Report aus, um weitere Informationen zu erhalten."
+ui.report.management.pending.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-      moderator:
-        title: "§8» §fMeine offenen Reports"
-        content: "§8» §7Hier sind all deine offenen Reports, die du als Moderator bearbeitest. Wähle einen Reports aus, um diesen zu bearbeiten."
-        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.moderator.title: "§8» §fMeine offenen Reports"
+ui.report.management.moderator.content: "§8» §7Hier sind all deine offenen Reports, die du als Moderator bearbeitest. Wähle einen Reports aus, um diesen zu bearbeiten."
+ui.report.management.moderator.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-      search:
-        title: "§8» §fSuche nach Reports"
-        progress: "§8» §7Bitte wähle einen Status aus, nach dem gesucht werden soll."
-        type: "§8» §7Bitte wähle ein Suchkriterium."
-        value: "§8» §7Bitte gebe einen gültigen Spielernamen an, der zu dem Suchkriterium passt."
-        value.placeholder: "Spieler007"
-        result:
-          title: "§8» §fSuchergebnisse"
-          content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
-          report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.report.management.search.title: "§8» §fSuche nach Reports"
+ui.report.management.search.progress: "§8» §7Bitte wähle einen Status aus, nach dem gesucht werden soll."
+ui.report.management.search.type: "§8» §7Bitte wähle ein Suchkriterium."
+ui.report.management.search.value: "§8» §7Bitte gebe einen gültigen Spielernamen an, der zu dem Suchkriterium passt."
+ui.report.management.search.value.placeholder: "Spieler007"
+ui.report.management.search.result.title: "§8» §fSuchergebnisse"
+ui.report.management.search.result.content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
+ui.report.management.search.result.report: "§8» §f{0} §8| §e{1}\n§f{3}"
 
-  myreports:
-    title: "§8» §fMeine Reports"
-    info: "§8» §7Bitte wähle einen Report-Status aus."
+ui.myreports.title: "§8» §fMeine Reports"
+ui.myreports.info: "§8» §7Bitte wähle einen Report-Status aus."
 
-    result:
-      title: "§8» §fSuchergebnisse"
-      content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
-      report: "§8» §f{0} §8| §e{1}\n§f{3}"
+ui.myreports.result.title: "§8» §fSuchergebnisse"
+ui.myreports.result.content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
+ui.myreports.result.report: "§8» §f{0} §8| §e{1}\n§f{3}"
