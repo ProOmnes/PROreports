@@ -1,0 +1,82 @@
+# Plugin prefixes
+system.prefix: "§8» §cReports §8| §7"
+
+# Plugin messages
+report:
+  send: "§aDu hast erfolgreich den Spieler §e{0} §afür §e{1}§a gemeldet. §7[§e{2}§7]"
+  closed: "§aDu hast den Report erfolgreich geschlossen. §7[§e{0}§7]"
+  join.info: "§7Es sind derzeit §e{0} Reports §7offen."
+  error:
+    target: "§cBitte gebe einen gültigen Spielernamen an."
+    reason: "§cBitte gebe einen gültigen Grund an."
+    already.reported: "§cDu hast diesen Spieler bereits gemeldet. Bitte warte erst, bis dieser bearbeitet wurde."
+    self: "§cDu darfst dich selbst nicht melden!"
+  management:
+    error:
+      search: "§cBitte gebe einen gültigen Spielernamen an, um nach Reports zu suchen."
+      result: "§cEs wurden keine Reports gefunden."
+      pending: "§cAktuell gibt es keine unbearbeiteten Reports."
+      take: "§cDu hast zur Zeit keine Reports, die du bearbeitest."
+    take.report: "§aDu hast den Report erfolgreich angenommen. Du kannst diesen nun unter deinen Reports bearbeiten. §7[§e{0}§7]"
+    solve.report: "§aDu hast den Report erfolgreich abgearbeitet. Der Report-Status wurde nun auf §eClosed §agesetzt. §7[§e{0}§7]"
+
+# UI displays
+ui:
+  button:
+    back: "§8» §cZurück"
+
+  create:
+    report:
+      title: "§8» §fNeuen Report erstellen"
+      select.player: "> Wähle einen Spieler... <"
+      select.player.info: "§8» §7Wähle einen Spieler, der aktuell online ist."
+      target.info: "§8» §7Gebe einen Spieler an, der gemeldet werden soll. §6Wenn du bereits einen Spieler ausgewählt hast, der online ist, kannst du dieses Feld ignorieren."
+      target.placeholder: "Jemand123"
+      reason.info: "§8» §7Bitte gebe einen Grund für deine Meldung an."
+      reason.placeholder: "Hacking"
+
+  report:
+    title: "§8» §fReport {0}"
+    content: "§eReport ID: §7{0}\n\n§bErsteller: §7{1}\n§bGemeldet: §7{2}\n§bGrund: §7{3}\n§bStatus: §7{4}\n§bModerator: §7{5}\n§bDatum: §7{6}\n"
+    button:
+      take: "§8» §9Report annehmen"
+      solve: "§8» §2Report fertigstellen"
+      close: "§8» §4Report schließen"
+
+    management:
+      title: "§8» §fReport Management"
+      content: "§8» §7Hier kannst du unbearbeitete Reports annehmen und deine angenommenen Reports bearbeiten."
+      button:
+        open: "§8» §fUnbearbeitete Reports"
+        manage: "§8» §fMeine offenen Reports"
+        search: "§8» §fSuche nach Reports"
+
+      pending:
+        title: "§8» §fUnbearbeitete reports"
+        content: "§8» §7Alle unbearbeiteten Reports sind hier aufgelistet. Wähle einen Report aus, um weitere Informationen zu erhalten."
+        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+
+      moderator:
+        title: "§8» §fMeine offenen Reports"
+        content: "§8» §7Hier sind all deine offenen Reports, die du als Moderator bearbeitest. Wähle einen Reports aus, um diesen zu bearbeiten."
+        report: "§8» §f{0} §8| §e{1}\n§f{3}"
+
+      search:
+        title: "§8» §fSuche nach Reports"
+        progress: "§8» §7Bitte wähle einen Status aus, nach dem gesucht werden soll."
+        type: "§8» §7Bitte wähle ein Suchkriterium."
+        value: "§8» §7Bitte gebe einen gültigen Spielernamen an, der zu dem Suchkriterium passt."
+        value.placeholder: "Spieler007"
+        result:
+          title: "§8» §fSuchergebnisse"
+          content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
+          report: "§8» §f{0} §8| §e{1}\n§f{3}"
+
+  myreports:
+    title: "§8» §fMeine Reports"
+    info: "§8» §7Bitte wähle einen Report-Status aus."
+
+    result:
+      title: "§8» §fSuchergebnisse"
+      content: "§8» §7Dies sind alle Reports, die gefunden wurden. Klicke einen an, um weitere Informationen zu erhalten."
+      report: "§8» §f{0} §8| §e{1}\n§f{3}"
