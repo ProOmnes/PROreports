@@ -1,11 +1,11 @@
-# PROreports
-An advanced report system for reporting players with a user interface for moderators.
-___
 ![IMG](https://img.shields.io/github/license/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/last-commit/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/issues/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/issues-closed/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/issues-pr/ProOmnes/PROreports)
+# PROreports
+An advanced report system for reporting players with a user interface for moderators.
+
 ## Features
 - Create a report as a player with your own reason
 - See all your sent reports
@@ -82,5 +82,6 @@ ___
 ![IMG](https://img.shields.io/github/issues/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/issues-closed/ProOmnes/PROreports)
 ![IMG](https://img.shields.io/github/issues-pr/ProOmnes/PROreports)
+
 We are very happy to receive any constructive feedback.
 If you have any problems with this plugin, we are happy to help you on [GitHub](https://github.com/ProOmnes/PROreports) or on our [Discord](https://discord.gg/vgwJtjaFXM) server!
